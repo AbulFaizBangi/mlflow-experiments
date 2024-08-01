@@ -3,6 +3,7 @@
 # Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
 
 import os
+import warnings
 import sys
 
 import pandas as pd
@@ -28,13 +29,19 @@ def eval_metrics(actual, pred):
 
 
 if __name__ == "__main__":
+    warnings.filterwarnings("ignore")
     np.random.seed(40)
 
     # Read the wine-quality csv file from the URL
     csv_url = (
         "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
     )
-    data = pd.read_csv(csv_url, sep=";")
+    try:
+        data = pd.read_csv(csv_url, sep=";")
+    except Exception as e:
+        logger.exception(
+            "Unable to download training & test CSV, check your internet connection. Error: %s", e
+        )
 
     # Split the data into training and test sets. (0.75, 0.25) split.
     train, test = train_test_split(data)
