@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abulfaiz/ML%20Projects/ML%20Project/mlflow/mlruns/0/11d9803f4cd7486ba9fce975f1a7d2ba/artifacts
+end_time: 1722508083682
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 11d9803f4cd7486ba9fce975f1a7d2ba
+run_name: clean-robin-484
+run_uuid: 11d9803f4cd7486ba9fce975f1a7d2ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1722508082091
+status: 3
+tags: []
+user_id: abulfaiz
